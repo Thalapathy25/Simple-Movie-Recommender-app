@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Recommender</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+
+  <body>
+    <div style="margin-top: 50px" class="ui segment">
+      <h1 class="ui center aligned header">Movie Recommendation</h1>
+
+      <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post" class="ui form">
+        <input
+          type="text"
+          name="Movie Name"
+          placeholder="Movie Name"
+          required="required"
+        /><br /><br />
+        <button class="ui green button" type="submit">Predict</button>
+        <button class="ui blue button" onclick="goBack()">Go Back</button>
+        <script>
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+      </form>
+      {% if len == 0 %}
+      <h5>
+        Sorry! The movie you requested is not in our database. Please check the
+        spelling or try with some other movies.
+      </h5>
+      {% else %}
+      <ul class="ui list">
+        {% for key in data%}
+        <li>{{ key }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </body>
+</html>
