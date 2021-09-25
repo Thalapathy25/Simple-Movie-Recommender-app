@@ -17,11 +17,9 @@
 - Create app object from `Flask()` and create routes `home` and `predict`
 - Define a function `home()` to render the homepage of the web app 
 - Define function `predict()` to get movie name input from the user by html form and predict recommend movies using `recommend_movie()` and display the output as a unordered list.
-#### App interface 👇
-<img src="images/out1.png" alt="Running Flask app">
 
 #### Prediction with Correct Movie Name 👇
-<img src="images/out2.png" alt="Prediction with Correct Movie Name">
+<img src="images/out1.gif" alt="Prediction with Correct Movie Name">
 
 #### Prediction with Wrong Movie Name 👇
-<img src="images/out3.png" alt="Prediction with Wrong Movie Name">
+<img src="images/out2.gif" alt="Prediction with Wrong Movie Name">
